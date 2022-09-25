@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC } from 'react';
+import styled from 'styled-components';
+import Title from 'components/Title';
+import Flex from 'components/Flex';
+import Console from 'components/Console';
+import Button from 'components/Button';
 
-function App() {
+const AppWrapper = styled.div`
+width: 100%;
+min-height: 100vh;
+padding: 2rem;
+background: black;
+color: white;
+`
+
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppWrapper>
+      <Flex justify={'center'}>
+        <Title>Console cmd 2022</Title>
+      </Flex>
+      <Flex direction={'column'} margin={'20px 0px'}>
+        <Console color={'green'} />
+        <Button primary outlined align={'flex-end'}>Отправить</Button>
+      </Flex>
+    </AppWrapper>
   );
-}
+};
 
 export default App;
